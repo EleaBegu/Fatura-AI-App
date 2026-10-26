@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaturaAI | Paneli kryesor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app">
+
+        <aside class="sidebar">
+            <div class="logo">Fatura<span>AI</span></div>
+            <p class="sidebar-subtitle">Menaxhimi inteligjent i faturave</p>
+
+            <p class="menu-title">Menyja kryesore</p>
+            <a href="/" class="menu-link active">⌂ &nbsp; Paneli kryesor</a>
+            <a href="#porosia" class="menu-link">▧ &nbsp; Ngarko porosinë</a>
+            <a href="#produktet" class="menu-link">▤ &nbsp; Produktet e depos</a>
+            <a href="#faturat" class="menu-link">▣ &nbsp; Faturat</a>
+
+            <p class="menu-title">Sistemi</p>
+            <a href="/docs" class="menu-link">⚙ &nbsp; Dokumentacioni teknik</a>
+        </aside>
+
+        <main class="main">
+
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">FaturaAI / Paneli</p>
+                    <h1>Paneli kryesor</h1>
+                    <p class="subtitle">
+                        Mirë se erdhe! Menaxho porositë dhe faturat nga një vend i vetëm.
+                    </p>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Sistemi aktiv
+                </div>
+            </header>
+
+            <section class="welcome">
+                <h2>Mirë se vjen në FaturaAI!</h2>
+                <p>
+                    Ngarko fotografinë e një porosie, kontrollo produktet dhe
+                    përgatitu për krijimin e faturës automatike.
+                </p>
+            </section>
+
+            <section class="stats">
+                <div class="stat-card">
+                    <p class="stat-label">Produktet e depos</p>
+                    <p class="stat-value">—</p>
+                    <p class="stat-note">Do të lidhen me Excel-in</p>
+                </div>
+
+                <div class="stat-card">
+                    <p class="stat-label">Porositë e përpunuara</p>
+                    <p class="stat-value">0</p>
+                    <p class="stat-note">Numri do të përditësohet më vonë</p>
+                </div>
+
+                <div class="stat-card">
+                    <p class="stat-label">Faturat e krijuara</p>
+                    <p class="stat-value">0</p>
+                    <p class="stat-note">PDF-të do t'i shtojmë në hapin tjetër</p>
+                </div>
+            </section>
+
+            <div class="content-grid">
+
+                <section class="card" id="porosia">
+                    <h2 class="section-title">Ngarko porosinë</h2>
+                    <p class="card-description">
+                        Zgjidh një fotografi të porosisë nga kompjuteri yt.
+                    </p>
+
+                    <form id="uploadForm">
+                        <div class="upload-area">
+                            <div class="upload-icon">⇧</div>
+                            <h3>Zgjidh fotografinë e porosisë</h3>
+                            <p>
+                                Pranohet një fotografi në format JPG, PNG ose WEBP.
+                            </p>
+
+                            <input
+                                type="file"
+                                id="foto"
+                                name="foto"
+                                class="file-input"
+                                accept="image/jpeg,image/png,image/webp"
+                                required
+                            >
+
+                            <button type="button" class="button button-primary"
+                                id="chooseButton">
+                                Zgjidh fotografinë
+                            </button>
+
+                            <p class="file-name" id="fileName">
+                                Nuk është zgjedhur asnjë fotografi.
+                            </p>
+                        </div>
+
+                        <div style="margin-top: 18px;">
+                            <button type="submit" class="button button-primary"
+                                id="uploadButton" disabled>
+                                Ngarko porosinë
+                            </button>
+                        </div>
+
+                        <div class="message" id="message" role="status"></div>
+                    </form>
+                </section>
+
+                <section class="card">
+                    <h2 class="section-title">Si funksionon?</h2>
+                    <p class="card-description">
+                        Procesi i përpunimit të porosisë.
+                    </p>
+
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div>
+                                <h3>Ngarko fotografinë</h3>
+                                <p>Zgjidh fotografinë e letrës së porosisë.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div>
+                                <h3>Leximi me AI</h3>
+                                <p>Sistemi do të lexojë produktet dhe sasitë.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div>
+                                <h3>Kontrollo të dhënat</h3>
+                                <p>Kontrollo emrat, sasitë dhe çmimet para konfirmimit.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div>
+                                <h3>Gjenero faturën</h3>
+                                <p>Fatura përfundimtare do të krijohet në format PDF.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <section class="card" id="produktet" style="margin-top: 20px;">
+                <h2 class="section-title">Produktet e depos</h2>
+                <p class="card-description">
+                    Këtu do t'i shfaqim produktet reale pasi ta lidhim Excel-in me databazën.
+                </p>
+                <p style="color: #718096; font-size: 13px;">
+                    Ende nuk ka produkte të importuara.
+                </p>
+            </section>
+
+            <section class="card" id="faturat" style="margin-top: 20px;">
+                <h2 class="section-title">Faturat</h2>
+                <p class="card-description">
+                    Faturat e krijuara do të shfaqen këtu pasi ta ndërtojmë funksionin PDF.
+                </p>
+                <p style="color: #718096; font-size: 13px;">
+                    Ende nuk ka fatura të krijuara.
+                </p>
+            </section>
+
+            <footer class="footer">
+                FaturaAI · Sistem për menaxhimin e porosive dhe faturave
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        const form = document.getElementById("uploadForm");
+        const foto = document.getElementById("foto");
+        const chooseButton = document.getElementById("chooseButton");
+        const uploadButton = document.getElementById("uploadButton");
+        const fileName = document.getElementById("fileName");
+        const message = document.getElementById("message");
+
+        chooseButton.addEventListener("click", () => foto.click());
+
+        foto.addEventListener("change", () => {
+            const file = foto.files[0];
+
+            fileName.textContent = file
+                ? "Fotografia: " + file.name
+                : "Nuk është zgjedhur asnjë fotografi.";
+
+            uploadButton.disabled = !file;
+            message.className = "message";
+            message.textContent = "";
+        });
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const file = foto.files[0];
+            if (!file) return;
+
+            const data = new FormData();
+            data.append("foto", file);
+
+            uploadButton.disabled = true;
+            uploadButton.textContent = "Duke ngarkuar...";
+            message.className = "message";
+            message.textContent = "";
+
+            try {
+                const response = await fetch("/ngarko-porosine", {
+                    method: "POST",
+                    body: data
+                });
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(
+                        typeof result.detail === "string"
+                            ? result.detail
+                            : "Ngarkimi nuk u realizua."
+                    );
+                }
+
+                message.textContent =
+                    result.mesazhi + " Skedari: " + result.skedari;
+                message.className = "message success show";
+            } catch (error) {
+                message.textContent =
+                    "Ndodhi një gabim gjatë ngarkimit. Kontrollo lidhjen me serverin.";
+                message.className = "message error show";
+            } finally {
+                uploadButton.disabled = !foto.files.length;
+                uploadButton.textContent = "Ngarko porosinë";
+            }
+        });
+    </script>
+</body>
+</html>
